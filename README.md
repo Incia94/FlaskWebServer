@@ -42,6 +42,7 @@ STEPS -
      docker build --tag incia123/flask-web-server:webserver .
   4. Push the image to Docker hub using -
      docker push  incia123/flask-web-server:webserver
+  Available att - https://hub.docker.com/repository/docker/incia123/flask-web-server
   5. We can Run the codker image directly in the local environment as follows -
      docker run webserver
   6. To get the Web Output in the terminal use the follwing command -
