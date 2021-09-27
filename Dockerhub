@@ -1,0 +1,19 @@
+FROM python:3.8
+
+RUN adduser myuser
+USER myuser
+#WORKDIR /home/WebServer
+
+COPY requirements.txt .
+
+ADD main.py /
+
+RUN pip install --user -r requirements.txt
+
+#ENV PATH="/home/WebServer/.local/bin:${PATH}"
+
+#COPY --chown=myuser:WebServer . .
+
+CMD [ "python", "./main.py" ]
+
+
