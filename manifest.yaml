@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  labels:
+    app: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: incia
+  template:
+    metadata:
+      labels:
+        app: incia
+    spec:
+      containers:
+      - name: incia
+        image: incia123/flask-web-server:webserver
+        ports:
+          - port: 80
+            targetPort: 5000
+    type: LoadBalancer
